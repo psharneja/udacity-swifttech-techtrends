@@ -1,4 +1,4 @@
-apiVersion: argoproj.io/v1aplha1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: techtrends-prod
@@ -13,5 +13,5 @@ spec:
       valueFiles:
       - values-prod.yaml
     path: helm/
-    repoUrl: https://github.com/psharneja/udacity-swifttech-techtrends
+    repoURL: https://github.com/psharneja/udacity-swifttech-techtrends
     targetRevision: HEAD
