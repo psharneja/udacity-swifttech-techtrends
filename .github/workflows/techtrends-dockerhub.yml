@@ -37,6 +37,6 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          platform: linux/amd64
+          platforms: linux/amd64
           push: true
-          tags: psharneja/tech-trends:latest, 
+          tags: psharneja/tech-trends:${{ steps.buildtag.outputs.tag }}
