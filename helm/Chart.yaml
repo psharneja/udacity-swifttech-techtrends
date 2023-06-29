@@ -1,0 +1,10 @@
+apiVersion: v1
+name: techtrends
+description: TechTrends Project for Udacity SwiftTech DevOps with Java Nanodegree
+keywords:
+- techtrends
+version: 1.0.0
+maintainers:
+- name: Prabhsimran Singh
+  url: https://github.com/psharneja
+  email: you@psharneja.page
