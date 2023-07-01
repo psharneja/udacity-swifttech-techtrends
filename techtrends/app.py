@@ -39,13 +39,13 @@ def index():
 @app.route('/<int:post_id>')
 def post(post_id):
     post = get_post(post_id)
-    title=post['title']
-    s="An existing article is retrieved, titled: {}".format(title)
-    logger.info(s)
     if post is None:
       return render_template('404.html'), 404
     else:
-      return render_template('post.html', post=post)
+        title=post['title']
+        s="An existing article is retrieved, titled: {}".format(title)
+        logger.info(s)
+        return render_template('post.html', post=post)
 
 # Define the About Us page
 @app.route('/about')
@@ -118,4 +118,7 @@ if __name__ == "__main__":
     logger_formatter=logging.Formatter('%(levelname)s:%(name)s:%(asctime)s %(message)s', datefmt='%m/%d/%Y, %I:%M:%S')
     logger_handler.setFormatter(logger_formatter)
     logger.addHandler(logger_handler)
-    app.run(host='0.0.0.0', port='3111')
+    logger_error_handler = logging.StreamHandler(sys.stderr)
+    logger_error_handler.setLevel(logging.ERROR)
+    logger_error_handler.setFormatter(logger_formatter)
+    app.run(host='0.0.0.0', port='3112')

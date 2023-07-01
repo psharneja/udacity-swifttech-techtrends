@@ -3,6 +3,8 @@ namespace:
 service:
   port: 7111
 replicaCount: 5
+image:
+  pullPolicy: Always
 resources:
   requests:
     cpu: 350m

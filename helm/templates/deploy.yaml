@@ -24,11 +24,11 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         livenessProbe:
           httpGet:
-            port: 3111
+            port: {{ .Values.readinessProbe.port }}
             path: {{ .Values.livenessProbe.path }}
         readinessProbe:
           httpGet:
-            port: 3111
+            port: {{ .Values.readinessProbe.port }}
             path: {{ .Values.readinessProbe.path }}
         ports:
         - containerPort: {{ .Values.containerPort }}
